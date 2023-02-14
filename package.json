@@ -1,7 +1,7 @@
 {
   "name": "@ue/message",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "types": "types/index.d.ts",
   "license": "MIT",
@@ -44,5 +44,8 @@
     "LICENSE",
     "README.md",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "@ue/model": "^0.1.1"
+  }
 }

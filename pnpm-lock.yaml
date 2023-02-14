@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.8.4
+  '@ue/model': ^0.1.1
   '@vitejs/plugin-vue': ^4.0.0
   '@vitejs/plugin-vue-jsx': ^3.0.0
   ant-design-vue: ^3.2.13
@@ -11,6 +12,9 @@ specifiers:
   vite: ^4.1.0
   vue: ^3.2.45
   vue-tsc: ^1.0.24
+
+dependencies:
+  '@ue/model': 0.1.1
 
 devDependencies:
   '@types/node': 18.11.18
@@ -636,6 +640,10 @@ packages:
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
     dev: true
+
+  /@ue/model/0.1.1:
+    resolution: {integrity: sha512-C+Ozg2WTtIN4lemlha3W3A9Bor+WicE2wwIi7g8G983jY/FxHixhfRet0dC4Y13/uLi3bnZFQWG4jPV1sqlUrw==}
+    dev: false
 
   /@vitejs/plugin-vue-jsx/3.0.0_vite@4.1.1+vue@3.2.47:
     resolution: {integrity: sha512-vurkuzgac5SYuxd2HUZqAFAWGTF10diKBwJNbCvnWijNZfXd+7jMtqjPFbGt7idOJUn584fP1Ar9j/GN2jQ3Ew==}
