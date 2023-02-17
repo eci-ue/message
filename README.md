@@ -14,7 +14,11 @@ pnpm install @ue/message --registry http://npm.jslion.xyz/
 **使用**
 
 ```
-import { success, error } from "@ue/message";
+import { setMessage } from "@ue/message";
+import message from "ant-design-vue/lib/message/index";
+
+// 在项目初始化时执行
+setMessage(message);
 ```
 
 ## 案例

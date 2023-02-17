@@ -4,13 +4,32 @@
  */
 
 import { confirm as alert } from "@ue/model";
-import message from "ant-design-vue/lib/message/index";
 
 import type { Component } from "vue";
+import type { VueNode } from "ant-design-vue/lib/_util/type";
+import type { ConfigOnClose, MessageArgsProps, MessageType } from "ant-design-vue/lib/message/index";
 
-const loading = message.loading;
-const success = message.success;
-const error = message.error;
+interface Message {
+  loading: (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) => MessageType;
+  success: (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) => MessageType;
+  error: (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) => MessageType;
+}
+
+let message: Message;
+
+export const setMessage = function(value: Message) {
+  message = value;
+};
+
+export const loading = function(content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) {
+  return message?.loading(content, duration, onClose);
+};
+export const success = function(content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) {
+  return message?.success(content, duration, onClose);
+};
+export const error = function (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) {
+  return message?.error(content, duration, onClose);
+};
 
 /**
  * 确认提示框
@@ -18,7 +37,7 @@ const error = message.error;
  * @param props 如果提示内容为组件时传给组件的参数
  * @returns 
  */
-export const confirm = function(value: string | Component, props?: object): Promise<boolean> {
+export const confirm = function(value: string | Component | VueNode, props?: object): Promise<boolean> {
   return new Promise(function(resolve) {
     const config = {
       title: 'Confirm',
@@ -30,12 +49,6 @@ export const confirm = function(value: string | Component, props?: object): Prom
         resolve(true);
       }
     };
-    alert<string | Component>(value, config, props);
+    alert<string | Component | VueNode>(value, config, props);
   })
 };
-
-export {
-  error,
-  loading,
-  success,
-}
