@@ -3,32 +3,42 @@
  * @author svon.me@gmail.com
  */
 
+import { Message } from "./type";
 import { confirm as alert } from "@ue/model";
 
 import type { Component } from "vue";
 import type { VueNode } from "ant-design-vue/lib/_util/type";
 import type { ConfigOnClose, MessageArgsProps, MessageType } from "ant-design-vue/lib/message/index";
 
-interface Message {
-  loading: (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) => MessageType;
-  success: (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) => MessageType;
-  error: (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) => MessageType;
-}
 
-let message: Message;
+const message: Message = new Message();
 
 export const setMessage = function(value: Message) {
-  message = value;
+  if (value.success) {
+    message.setSuccess(value.success);
+  }
+  if (value.error) {
+    message.setError(value.error);
+  }
+  if (value.loading) {
+    message.setLoading(value.loading);
+  }
 };
 
-export const loading = function(content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) {
-  return message?.loading(content, duration, onClose);
+export const loading = function(content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose): MessageType | undefined {
+  if (message.loading) {
+    return message.loading(content, duration, onClose);
+  }
 };
-export const success = function(content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) {
-  return message?.success(content, duration, onClose);
+export const success = function(content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose): MessageType | undefined {
+  if (message.success) {
+    return message.success(content, duration, onClose);
+  }
 };
-export const error = function (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose) {
-  return message?.error(content, duration, onClose);
+export const error = function (content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose): MessageType | undefined {
+  if (message.error) {
+    return message.error(content, duration, onClose);
+  }
 };
 
 /**
