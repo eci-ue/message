@@ -7,13 +7,15 @@ import { Message } from "./type";
 import { confirm as alert } from "@ue/model";
 
 import type { Component } from "vue";
+import type { AntdMessage } from "./type";
 import type { VueNode } from "ant-design-vue/lib/_util/type";
 import type { ConfigOnClose, MessageArgsProps, MessageType } from "ant-design-vue/lib/message/index";
 
 
 const message: Message = new Message();
 
-export const setMessage = function(value: Message) {
+export const setMessage = function(value: Message | AntdMessage) {
+  message.setMessage(value as AntdMessage);
   if (value.success) {
     message.setSuccess(value.success);
   }
@@ -24,6 +26,10 @@ export const setMessage = function(value: Message) {
     message.setLoading(value.loading);
   }
 };
+
+export const noConflict = function(): AntdMessage {
+  return message.getMessage();
+}
 
 export const loading = function(content: VueNode | MessageArgsProps, duration?: number, onClose?: ConfigOnClose): MessageType | undefined {
   if (message.loading) {

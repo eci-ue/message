@@ -1,15 +1,16 @@
 {
   "name": "@ue/message",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "types": "types/index.d.ts",
   "license": "MIT",
   "main": "dist/message",
   "scripts": {
     "test": "vite --clearScreen --port 3000",
-    "build": "vue-tsc && vite build",
-    "types": "vue-tsc --jsx preserve --declaration --noEmit false --emitDeclarationOnly --declarationDir ./types ./src/index"
+    "build": "vite build",
+    "postbuild": "npm run types",
+    "types": "vue-tsc --declaration --noEmit false --emitDeclarationOnly --declarationDir ./types ./src/index"
   },
   "keywords": [
     "message"
@@ -46,7 +47,7 @@
     "package.json"
   ],
   "dependencies": {
-    "@fengqiaogang/safe-get": "^0.1.1",
-    "@ue/model": "^0.1.1"
+    "@fengqiaogang/safe-get": "^0.1.4",
+    "@ue/model": "^0.1.5"
   }
 }
