@@ -1,7 +1,7 @@
 {
   "name": "@ue/message",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "types": "types/index.d.ts",
   "license": "MIT",
@@ -48,6 +48,6 @@
   ],
   "dependencies": {
     "@fengqiaogang/safe-get": "^0.1.4",
-    "@ue/model": "^0.1.5"
+    "@ue/model": "0.1.6-1"
   }
 }
