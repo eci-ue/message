@@ -4,7 +4,7 @@
  */
 
 import { Message } from "./type";
-import { confirm as alert } from "@ue/model";
+import { confirm as alert } from "@ue/modal";
 
 import type { Component } from "vue";
 import type { AntdMessage } from "./type";
