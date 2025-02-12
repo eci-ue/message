@@ -30,7 +30,7 @@
     "@fengqiaogang/safe-set": "^0.1.3",
     "@types/node": "^18.8.4",
     "@ue/form": "^0.1.8",
-    "@ue/modal": "^0.2.3",
+    "@ue/modal": "^0.3.8",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "ant-design-vue": "^3.2.13",

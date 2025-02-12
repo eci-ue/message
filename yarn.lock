@@ -471,10 +471,10 @@
   resolved "https://packages.aliyun.com/67a476f560ce1807612c794a/npm/eci-npm/@ue/form/-/form-0.1.8.tgz#036f290b14be6831441e5acce665c080675e614c"
   integrity sha512-/TYK2vWtE7V16syVd/vg+Z1Zreh1UyDWE8ZO5VZrHfaKESFdWTqQ5pj/vQj8/V1OwlybBxqnN7PCJ6VgMarA7Q==
 
-"@ue/modal@^0.2.3":
-  version "0.2.3"
-  resolved "https://packages.aliyun.com/67a476f560ce1807612c794a/npm/eci-npm/@ue/modal/-/modal-0.2.3.tgz#26fadabdb873ee17b93e3bc806f3fdfa18723b9f"
-  integrity sha512-DNTOvFhghLQCxlBG6tpwlO7aJ19A4OL4uX4gq1W7EmZrEDsFdR62DLk5z/0M/OEsk5L15tECb/XMhJDoVA/ATg==
+"@ue/modal@^0.3.8":
+  version "0.3.8"
+  resolved "https://packages.aliyun.com/67a476f560ce1807612c794a/npm/eci-npm/@ue/modal/-/@ue/modal-0.3.8.tgz#a2d0e166ecc74ada4e7c6873f375de62352c9061"
+  integrity sha512-Tomt1zay1cRqLU4QnDntPmIvFTZhSqg6o/a7NNREAq0AKTDNNjeoSHGMyt79ZKDxFopHVf7we/vKNeVeOevEag==
 
 "@vitejs/plugin-vue-jsx@^3.0.0":
   version "3.1.0"
